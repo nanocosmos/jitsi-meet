@@ -80,6 +80,7 @@ export default [
     'disableAP',
     'disableAudioLevels',
     'disableDeepLinking',
+    'disableGUM',
     'disableH264',
     'disableHPF',
     'disableInviteFunctions',
