@@ -31,8 +31,9 @@ export function fetchCustomBrandingData() {
 
             if (url) {
                 try {
-                    const res = await doGetJSON(url);
-
+                    //NANO
+                    //const res = await doGetJSON(url);
+                    const res = await doGetJSON(`${baseUrl}?conferenceFqn=${encodeURIComponent(fqn)}`);
                     return dispatch(setDynamicBrandingData(res));
                 } catch (err) {
                     logger.error('Error fetching branding data', err);
@@ -53,6 +54,7 @@ export function fetchCustomBrandingData() {
  * @returns {Object}
  */
 function setDynamicBrandingData(value) {
+    console.log("SET DYNAMIC BRANDING DATA", value);
     return {
         type: SET_DYNAMIC_BRANDING_DATA,
         value
@@ -65,6 +67,7 @@ function setDynamicBrandingData(value) {
  * @returns {Object}
  */
 function setDynamicBrandingReady() {
+    console.log("SET DYNAMIC BRANDING READY")
     return {
         type: SET_DYNAMIC_BRANDING_READY
     };
@@ -76,6 +79,7 @@ function setDynamicBrandingReady() {
  * @returns {Object}
  */
 function setDynamicBrandingFailed() {
+    console.log("SET DYNAMIC BRANDING FAILED")
     return {
         type: SET_DYNAMIC_BRANDING_FAILED
     };
