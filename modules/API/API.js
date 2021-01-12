@@ -228,6 +228,7 @@ function initCommands() {
          * @param { boolean } arg.shouldShare - Whether the recording should be shared with the participants or not.
          * Only applies to certain jitsi meet deploys.
          * @param { string } arg.youtubeStreamKey - The youtube stream key.
+         * @param { string } arg.nanoStreamName - The nanostream cloud streamname.
          * @param { string } arg.youtubeBroadcastID - The youtube broacast ID.
          * @returns {void}
          */
