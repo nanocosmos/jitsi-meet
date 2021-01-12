@@ -29,7 +29,7 @@
     },
     "calendarSync": {
         "addMeetingURL": "Add a meeting link",
-        "confirmAddLink": "Do you want to add a Jitsi link to this event?",
+        "confirmAddLink": "Do you want to add a nanoStream Cloud Conference link to this event?",
         "error": {
             "appConfiguration": "Calendar integration is not properly configured.",
             "generic": "An error has occurred. Please check your calendar settings or try refreshing the calendar.",
@@ -143,7 +143,7 @@
     },
     "dialog": {
         "accessibilityLabel": {
-            "liveStreaming": "Live Stream"
+            "liveStreaming": "nanoStream Cloud Live Stream"
         },
         "allow": "Allow",
         "alreadySharedVideoMsg": "Another member is already sharing a video. This conference allows only one shared video at a time.",
@@ -257,7 +257,7 @@
         "stopRecording": "Stop recording",
         "stopRecordingWarning": "Are you sure you would like to stop the recording?",
         "stopStreamingWarning": "Are you sure you would like to stop the live streaming?",
-        "streamKey": "Live stream key",
+        "streamKey": "nanoStream Cloud stream name",
         "Submit": "Submit",
         "thankYou": "Thank you for using {{appName}}!",
         "token": "token",
@@ -299,7 +299,7 @@
         "answer": "Answer",
         "audioCallTitle": "Incoming call",
         "decline": "Dismiss",
-        "productLabel": "from Jitsi Meet",
+        "productLabel": "from nanoStream Cloud Conference",
         "videoCallTitle": "Incoming video call"
     },
     "info": {
@@ -369,12 +369,12 @@
         "changeSignIn": "Switch accounts.",
         "choose": "Choose a live stream",
         "chooseCTA": "Choose a streaming option. You're currently logged in as {{email}}.",
-        "enterStreamKey": "Enter your YouTube live stream key here.",
+        "enterStreamKey": "Enter your live stream key here.",
         "error": "Live Streaming failed. Please try again.",
-        "errorAPI": "An error occurred while accessing your YouTube broadcasts. Please try logging in again.",
+        "errorAPI": "An error occurred while accessing your broadcasts. Please try logging in again.",
         "errorLiveStreamNotEnabled": "Live Streaming is not enabled on {{email}}. Please enable live streaming or log into an account with live streaming enabled.",
         "expandedOff": "The live streaming has stopped",
-        "expandedOn": "The meeting is currently being streamed to YouTube.",
+        "expandedOn": "The meeting is currently being streamed.",
         "expandedPending": "The live streaming is being started…",
         "failedToStart": "Live Streaming failed to start",
         "getStreamKeyManually": "We weren’t able to fetch any live streams. Try getting your live stream key from YouTube.",
@@ -385,7 +385,7 @@
         "serviceName": "Live Streaming service",
         "signedInAs": "You are currently signed in as:",
         "signIn": "Sign in with Google",
-        "signInCTA": "Sign in or enter your live stream key from YouTube.",
+        "signInCTA": "Sign in or enter your live stream name from nanoStream Cloud.",
         "signOut": "Sign out",
         "start": "Start a live stream",
         "streamIdHelp": "What's this?",
@@ -393,7 +393,7 @@
         "onBy": "",
         "offBy": "",
         "googlePrivacyPolicy": "Google Privacy Policy",
-        "youtubeTerms": "YouTube terms of services"
+        "youtubeTerms": "Live Streaming terms of services"
     },
     "localRecording": {
         "clientState": {
@@ -521,7 +521,7 @@
             "title": "Calendar"
         },
         "devices": "Devices",
-        "followMe": "Everyone follows me",
+        "followMe": "Presenter Mode",
         "language": "Language",
         "loggedIn": "Logged in as {{name}}",
         "moderator": "Moderator",
@@ -727,7 +727,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted, 100% open source video conferencing solution that you can use all day, every day, for free — with no account needed.",
+        "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted video conferencing solution that you can use all day, every day, and stream around the world in 1 second.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
@@ -748,7 +748,7 @@
         "roomnameHint": "Enter the name or URL of the room you want to join. You may make a name up, just let the people you are meeting know it so that they enter the same name.",
         "sendFeedback": "Send feedback",
         "terms": "Terms",
-        "title": "Secure, fully featured, and completely free video conferencing"
+        "title": "Stream your conference around the world!"
     },
     "documentSharing": {
         "title": ""

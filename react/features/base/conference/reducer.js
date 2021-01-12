@@ -100,6 +100,7 @@ ReducerRegistry.register(
         return state;
     });
 
+
 /**
  * Reduces a specific Redux action AUTH_STATUS_CHANGED of the feature
  * base/conference.

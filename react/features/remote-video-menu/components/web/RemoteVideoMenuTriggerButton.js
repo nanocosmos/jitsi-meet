@@ -202,12 +202,14 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
                 );
             }
 
-            buttons.push(
-                <GrantModeratorButton
-                    key = 'grant-moderator'
-                    participantID = { participantID } />
-            );
+            // buttons.push(
+            //     <GrantModeratorButton
+            //         key = 'grant-moderator'
+            //         participantID = { participantID } />
+            // );
+        }
 
+        if(!_isModerator) {
             if (!_disableKick) {
                 buttons.push(
                     <KickButton
@@ -235,11 +237,11 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
             );
         }
 
-        buttons.push(
-            <PrivateMessageMenuButton
-                key = 'privateMessage'
-                participantID = { participantID } />
-        );
+        // buttons.push(
+        //     <PrivateMessageMenuButton
+        //         key = 'privateMessage'
+        //         participantID = { participantID } />
+        // );
 
         if (onVolumeChange) {
             buttons.push(

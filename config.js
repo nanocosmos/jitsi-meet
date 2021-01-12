@@ -6,34 +6,35 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'jitsi-meet.example.com',
+        domain: 'conference.nanocosmos.de',
 
         // When using authentication, domain for guest users.
-        // anonymousdomain: 'guest.example.com',
+        anonymousdomain: 'guest.conference.nanocosmos.de',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'jitsi-meet.example.com',
+        // authdomain: 'jibri.nanocosmos.de',
+
+        // Jirecon recording component domain.
+        // jirecon: 'jirecon.jibri.nanocosmos.de',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        // focus: 'focus.jibri.nanocosmos.de',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.jitsi-meet.example.com'
+        muc: 'conference.<!--# echo var="subdomain" default="" -->conference.nanocosmos.de'
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: '//jitsi-meet.example.com/http-bind',
+    bosh: '//conference.nanocosmos.de/http-bind',
 
     // Websocket URL
-    // websocket: 'wss://jitsi-meet.example.com/xmpp-websocket',
+    // websocket: 'wss://jibri.nanocosmos.de/xmpp-websocket',
 
     // The name of client node advertised in XEP-0115 'c' stanza
     clientNode: 'http://jitsi.org/jitsimeet',
 
     // The real JID of focus participant - can be overridden here
-    // Do not change username - FIXME: Make focus username configurable
-    // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.jitsi-meet.example.com',
+    // focusUserJid: 'focus@auth.jibri.nanocosmos.de',
 
 
     // Testing / experimental features.
@@ -61,11 +62,6 @@ var config = {
         // adjusted to 2.5 Mbps. This takes a value between 0 and 1 which determines
         // the probability for this to be enabled.
         // capScreenshareBitrate: 1 // 0 to disable
-
-        // Enable callstats only for a percentage of users.
-        // This takes a value between 0 and 100 which determines the probability for
-        // the callstats to be enabled.
-        // callStatsThreshold: 5 // enable callstats for 5% of the users.
     },
 
     // Disables ICE/UDP by filtering out local and remote UDP candidates in
@@ -107,7 +103,7 @@ var config = {
     // startAudioOnly: false,
 
     // Every participant after the Nth will start audio muted.
-    // startAudioMuted: 10,
+    startAudioMuted: 1,
 
     // Start calls with audio muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
@@ -130,24 +126,20 @@ var config = {
     // Sets the preferred resolution (height) for local video. Defaults to 720.
     // resolution: 720,
 
-    // How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
-    // Use -1 to disable.
-    // maxFullResolutionParticipants: 2,
-
     // w3c spec-compliant video constraints to use for video capture. Currently
     // used by browsers that return true from lib-jitsi-meet's
     // util#browser#usesNewGumFlow. The constraints are independent from
     // this config's resolution value. Defaults to requesting an ideal
     // resolution of 720p.
-    // constraints: {
-    //     video: {
-    //         height: {
-    //             ideal: 720,
-    //             max: 720,
-    //             min: 240
-    //         }
-    //     }
-    // },
+     constraints: {
+         video: {
+             height: {
+                 ideal: 720,
+                 max: 1080,
+                 min: 240
+             }
+         }
+     },
 
     // Enable / disable simulcast support.
     // disableSimulcast: false,
@@ -162,13 +154,12 @@ var config = {
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    // startWithVideoMuted: false,
+    startWithVideoMuted: false,
 
     // If set to true, prefer to use the H.264 video codec (if supported).
     // Note that it's not recommended to do this because simulcast is not
     // supported when  using H.264. For 1-to-1 calls this setting is enabled by
     // default and can be toggled in the p2p section.
-    // This option has been deprecated, use preferredCodec under videoQuality section instead.
     // preferH264: true,
 
     // If set to true, disable H.264 video codec by stripping it out of the
@@ -189,15 +180,15 @@ var config = {
     // Recording
 
     // Whether to enable file recording or not.
-    // fileRecordingsEnabled: false,
+    fileRecordingsEnabled: true,
     // Enable the dropbox integration.
     // dropbox: {
     //     appKey: '<APP_KEY>' // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://jitsi-meet.example.com/static/oauth.html'
+    //     // 'https://jibri.nanocosmos.de/static/oauth.html'
     //     redirectURI:
-    //          'https://jitsi-meet.example.com/subfolder/static/oauth.html'
+    //          'https://jibri.nanocosmos.de/subfolder/static/oauth.html'
     // },
     // When integrations like dropbox are enabled only that will be shown,
     // by enabling fileRecordingsServiceEnabled, we show both the integrations
@@ -210,7 +201,9 @@ var config = {
     // fileRecordingsServiceSharingEnabled: false,
 
     // Whether to enable live streaming or not.
-    // liveStreamingEnabled: false,
+    liveStreamingEnabled: true,
+
+    hiddenDomain: 'recorder.conference.nanocosmos.de',
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)
@@ -323,14 +316,17 @@ var config = {
     // bridge itself is reachable via UDP)
     // useTurnUdp: false
 
+    // Enables / disables a data communication channel with the Videobridge.
+    // Values can be 'datachannel', 'websocket', true (treat it as
+    // 'datachannel'), undefined (treat it as 'datachannel') and false (don't
+    // open any channel).
+    // openBridgeChannel: true,
+
     // UI
     //
 
-    // Hides lobby button
-    // hideLobbyButton: false,
-
     // Require users to always specify a display name.
-    // requireDisplayName: true,
+    requireDisplayName: true,
 
     // Whether to use a welcome page or not. In case it's false a random room
     // will be joined when no room is specified.
@@ -344,7 +340,7 @@ var config = {
     // disable1On1Mode: false,
 
     // Default language for the user interface.
-    // defaultLanguage: 'en',
+    defaultLanguage: 'en',
 
     // Disables profile and the edit of all fields from the profile settings (display name and email)
     // disableProfile: false,
@@ -430,10 +426,13 @@ var config = {
         // connection.
         enabled: true,
 
+        // Use XEP-0215 to fetch STUN and TURN servers.
+        // useStunTurn: true,
+
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:jitsi-meet.example.com:3478' },
+            // { urls: 'stun:jibri.nanocosmos.de:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' }
         ]
 
@@ -446,19 +445,12 @@ var config = {
         // iceTransportPolicy: 'all',
 
         // If set to true, it will prefer to use H.264 for P2P calls (if H.264
-        // is supported). This setting is deprecated, use preferredCodec instead.
+        // is supported).
         // preferH264: true
 
-        // Provides a way to set the video codec preference on the p2p connection. Acceptable
-        // codec values are 'VP8', 'VP9' and 'H264'.
-        // preferredCodec: 'H264',
-
         // If set to true, disable H.264 video codec by stripping it out of the
-        // SDP. This setting is deprecated, use disabledCodec instead.
+        // SDP.
         // disableH264: false,
-
-        // Provides a way to prevent a video codec from being negotiated on the p2p connection.
-        // disabledCodec: '',
 
         // How long we're going to wait, before going back to P2P after the 3rd
         // participant has left the conference (to filter out page reload).
@@ -477,12 +469,6 @@ var config = {
         // amplitudeAPPKey: '<APP_KEY>'
 
         // Configuration for the rtcstats server:
-        // By enabling rtcstats server every time a conference is joined the rtcstats
-        // module connects to the provided rtcstatsEndpoint and sends statistics regarding
-        // PeerConnection states along with getStats metrics polled at the specified
-        // interval.
-        // rtcstatsEnabled: true,
-
         // In order to enable rtcstats one needs to provide a endpoint url.
         // rtcstatsEndpoint: wss://rtcstats-server-pilot.jitsi.net/,
 
@@ -497,9 +483,6 @@ var config = {
         //      "https://example.com/my-custom-analytics.js"
         // ],
     },
-
-    // Logs that should go be passed through the 'log' event if a handler is defined for it
-    // apiLogLevels: ['warn', 'log', 'error', 'info', 'debug'],
 
     // Information about the jitsi-meet instance we are connecting to, including
     // the user region as seen by the server.
@@ -529,20 +512,20 @@ var config = {
     // Local Recording
     //
 
-    // localRecording: {
+    localRecording: {
     // Enables local recording.
     // Additionally, 'localrecording' (all lowercase) needs to be added to
     // TOOLBAR_BUTTONS in interface_config.js for the Local Recording
     // button to show up on the toolbar.
     //
-    //     enabled: true,
+    enabled: true,
     //
 
     // The recording format, can be one of 'ogg', 'flac' or 'wav'.
-    //     format: 'flac'
+    format: 'flac'
     //
 
-    // },
+    },
 
     // Options related to end-to-end (participant to participant) ping.
     // e2eping: {
@@ -565,7 +548,7 @@ var config = {
 
     // If true, any checks to handoff to another application will be prevented
     // and instead the app will continue to display in the current browser.
-    // disableDeepLinking: false,
+    disableDeepLinking: true,
 
     // A property to disable the right click context menu for localVideo
     // the menu has option to flip the locally seen video for local presentations
@@ -621,7 +604,7 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.jitsi-meet.example.com',
+    // moderatedRoomServiceUrl: 'https://moderated.jibri.nanocosmos.de',
 
     // If true, tile view will not be enabled automatically when the participants count threshold is reached.
     // disableTileView: true,
@@ -641,6 +624,8 @@ var config = {
     // List of undocumented settings used in jitsi-meet
     /**
      _immediateReloadThreshold
+     autoRecord
+     autoRecordToken
      debug
      debugAudioLevels
      deploymentInfo
@@ -663,13 +648,6 @@ var config = {
      tokenAuthUrl
      */
 
-    /**
-     * This property can be used to alter the generated meeting invite links (in combination with a branding domain
-     * which is retrieved internally by jitsi meet) (e.g. https://meet.jit.si/someMeeting
-     * can become https://brandedDomain/roomAlias)
-     */
-    // brandingRoomAlias: null,
-
     // List of undocumented settings used in lib-jitsi-meet
     /**
      _peerConnStatusOutOfLastNTimeout
@@ -690,6 +668,10 @@ var config = {
      hiddenDomain
      ignoreStartMuted
      */
+
+     disableAEC:true,
+     disableAGC:true,
+     disableAP:true,
 
 
     // Allow all above example options to include a trailing comma and

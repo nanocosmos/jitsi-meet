@@ -44,7 +44,7 @@
     },
     "calendarSync": {
         "addMeetingURL": "Add a meeting link",
-        "confirmAddLink": "Do you want to add a Jitsi link to this event?",
+        "confirmAddLink": "Do you want to add a nanoStream Cloud Conference link to this event?",
         "error": {
             "appConfiguration": "Calendar integration is not properly configured.",
             "generic": "An error has occurred. Please check your calendar settings or try refreshing the calendar.",
@@ -285,6 +285,7 @@
         "shareVideoTitle": "Share a video",
         "shareYourScreen": "Share your screen",
         "shareYourScreenDisabled": "Screen sharing disabled.",
+        "shareYourScreenDisabledForGuest": "Guests can't screen share.",
         "startLiveStreaming": "Start live stream",
         "startRecording": "Start recording",
         "startRemoteControlErrorMessage": "An error occurred while trying to start the remote control session!",
@@ -292,7 +293,7 @@
         "stopRecording": "Stop recording",
         "stopRecordingWarning": "Are you sure you would like to stop the recording?",
         "stopStreamingWarning": "Are you sure you would like to stop the live streaming?",
-        "streamKey": "Live stream key",
+        "streamKey": "nanoStream Cloud Streamname",
         "Submit": "Submit",
         "thankYou": "Thank you for using {{appName}}!",
         "token": "token",
@@ -333,7 +334,7 @@
         "answer": "Answer",
         "audioCallTitle": "Incoming call",
         "decline": "Dismiss",
-        "productLabel": "from Jitsi Meet",
+        "productLabel": "from nanoStream Cloud Conference",
         "videoCallTitle": "Incoming video call"
     },
     "info": {
@@ -404,30 +405,30 @@
         "changeSignIn": "Switch accounts.",
         "choose": "Choose a live stream",
         "chooseCTA": "Choose a streaming option. You're currently logged in as {{email}}.",
-        "enterStreamKey": "Enter your YouTube live stream key here.",
+        "enterStreamKey": "Enter your live stream key or stream name here.",
         "error": "Live Streaming failed. Please try again.",
-        "errorAPI": "An error occurred while accessing your YouTube broadcasts. Please try logging in again.",
+        "errorAPI": "An error occurred while accessing your broadcasts. Please try logging in again.",
         "errorLiveStreamNotEnabled": "Live Streaming is not enabled on {{email}}. Please enable live streaming or log into an account with live streaming enabled.",
         "expandedOff": "The live streaming has stopped",
-        "expandedOn": "The meeting is currently being streamed to YouTube.",
+        "expandedOn": "The meeting is currently being streamed.",
         "expandedPending": "The live streaming is being started...",
         "failedToStart": "Live Streaming failed to start",
-        "getStreamKeyManually": "We weren’t able to fetch any live streams. Try getting your live stream key from YouTube.",
-        "invalidStreamKey": "Live stream key may be incorrect.",
+        "getStreamKeyManually": "We weren’t able to fetch any live streams. Try getting your live stream name from nanoStream Cloud.",
+        "invalidStreamKey": "Live stream name may be incorrect.",
         "off": "Live Streaming stopped",
         "offBy": "{{name}} stopped the live streaming",
         "on": "Live Streaming started",
         "onBy": "{{name}} started the live streaming",
         "pending": "Starting Live Stream...",
-        "serviceName": "Live Streaming service",
+        "serviceName": "nanoStream Cloud Live Streaming service",
         "signedInAs": "You are currently signed in as:",
         "signIn": "Sign in with Google",
-        "signInCTA": "Sign in or enter your live stream key from YouTube.",
+        "signInCTA": "Sign in or enter your live stream name.",
         "signOut": "Sign out",
         "start": "Start a live stream",
         "streamIdHelp": "What's this?",
         "unavailableTitle": "Live Streaming unavailable",
-        "youtubeTerms": "YouTube terms of services",
+        "youtubeTerms": "Live Streaming terms of services",
         "googlePrivacyPolicy": "Google Privacy Policy"
     },
     "localRecording": {
@@ -493,7 +494,7 @@
         "newDeviceAudioTitle": "New audio device detected",
         "newDeviceAction": "Use",
         "OldElectronAPPTitle": "Security vulnerability!",
-        "oldElectronClientDescription1": "You appear to be using an old version of the Jitsi Meet client which has known security vulnerabilities. Please make sure you update to our ",
+        "oldElectronClientDescription1": "You appear to be using an old version of the client which has known security vulnerabilities. Please make sure you update to our ",
         "oldElectronClientDescription2": "latest build",
         "oldElectronClientDescription3": " now!"
     },
@@ -626,7 +627,7 @@
             "title": "Calendar"
         },
         "devices": "Devices",
-        "followMe": "Everyone follows me",
+        "followMe": "Presenter Mode",
         "language": "Language",
         "loggedIn": "Logged in as {{name}}",
         "microphones": "Microphones",
@@ -862,7 +863,7 @@
             "join": "Tap to join",
             "roomname": "Enter room name"
         },
-        "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted, 100% open source video conferencing solution that you can use all day, every day, for free — with no account needed.",
+        "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted video conferencing solution that you can use all day, every day, and stream around the world in 1 second.",
         "audioVideoSwitch": {
             "audio": "Voice",
             "video": "Video"
@@ -891,7 +892,7 @@
         "sendFeedback": "Send feedback",
         "startMeeting": "Start meeting",
         "terms": "Terms",
-        "title": "Secure, fully featured, and completely free video conferencing"
+        "title": "Stream your conference around the world!"
     },
     "lonelyMeetingExperience": {
         "button": "Invite others",
