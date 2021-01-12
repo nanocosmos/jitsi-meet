@@ -1031,9 +1031,9 @@ class Toolbox extends Component<Props, State> {
             <LiveStreamButton
                 key='livestreaming'
                 showLabel={true} />,
-            <RecordButton
-                key='record'
-                showLabel={true} />,
+            // <RecordButton
+            //     key='record'
+            //     showLabel={true} />,
             // this._shouldShowButton('sharedvideo')
             //     && <OverflowMenuItem
             //         accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
@@ -1086,14 +1086,14 @@ class Toolbox extends Component<Props, State> {
             //         key = 'shortcuts'
             //         onClick = { this._onToolbarOpenKeyboardShortcuts }
             //         text = { t('toolbar.shortcuts') } />,
-            this._shouldShowButton('download')
-            && <DownloadButton
-                key='download'
-                showLabel={true} />,
-            this._shouldShowButton('help')
-            && <HelpButton
-                key='help'
-                showLabel={true} />
+            // this._shouldShowButton('download')
+            // && <DownloadButton
+            //     key='download'
+            //     showLabel={true} />,
+            // this._shouldShowButton('help')
+            // && <HelpButton
+            //     key='help'
+            //     showLabel={true} />
         ];
     }
 
@@ -1266,9 +1266,9 @@ class Toolbox extends Component<Props, State> {
         if (overflowHasItems) {
             buttonsRight.push('overflowmenu');
         }
-        if (this._shouldShowButton('invite')) {
-            buttonsRight.push('invite');
-        }
+        // if (this._shouldShowButton('invite')) {
+        //     buttonsRight.push('invite');
+        // }
         if (this._shouldShowButton('security') || this._shouldShowButton('info')) {
             buttonsRight.push('security');
         }
